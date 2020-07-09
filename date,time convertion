@@ -1,0 +1,9 @@
+a = '20080101'
+from datetime import datetime
+b = datetime.strptime(a,"%Y%m%d")
+from dateutil.parser import parse
+b = parse(a)
+import pandas as pd
+b = pd.to_datetime(a)
+df['date'] = [parse(date) for date in df['date']]
+df['date'] = df['date'].map(parse)
