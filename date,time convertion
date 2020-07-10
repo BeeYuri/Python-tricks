@@ -7,3 +7,6 @@ import pandas as pd
 b = pd.to_datetime(a)
 df['date'] = [parse(date) for date in df['date']]
 df['date'] = df['date'].map(parse)
+
+#取每个月的最后一天
+monthlist = data1.loc[data1.groupby(data1.index.to_period('M')).apply(lambda x: x.index.max())].index.tolist()
