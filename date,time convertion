@@ -15,3 +15,7 @@ monthlist = data1.loc[data1.groupby(data1.index.to_period('M')).apply(lambda x: 
 for date in datelist:
     date = date.to_pydatetime()
     date = date.strftime('%Y%m%d')
+
+#筛选某一时间段内的数据
+#https://blog.csdn.net/qq_38412868/article/details/107445068
+order_data.set_index("start_time").between_time("06:00", "22:00")
